@@ -52,6 +52,7 @@ top_k = 5
 alpha = 0.2
 result = rmd.recommend_ir_method(product_title, category, top_k, alpha)
 ```
+An example of the IR-based recommendation keywords of the test.csv cases is in [result_IR.csv](data/result_IR.csv).
 
 ### ML-based recommendation
 Before running the ML-based recommendation, you must train a classifier using the sample data. The classifer is used to determine for a given product and any keyword, how likely they will result in a click event. 
@@ -90,6 +91,8 @@ category = "Male Fashion"
 top_k = 5
 result = rmd.recommend_ml_predict(row['product'], cat, top_k, model)
 ```
+An example of the ML-based recommendation keywords of the test.csv cases is in [result_ML.csv](data/result_ML.csv).
+
 ## Testing and run
 The [test.py](code/test.py) file provides several detailed exmaples of testing functions of evaluating the performance of the IR-based and ML-based recommendation, and recommendation functions of generating recommendation results for a given test file. 
 

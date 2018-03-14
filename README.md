@@ -94,7 +94,7 @@ result = rmd.recommend_ml_predict(row['product'], cat, top_k, model)
 An example of the ML-based recommendation keywords of the test.csv cases is in [result_ML.csv](data/result_ML.csv).
 
 ## Testing and run
-The [test.py](code/test.py) file provides several detailed exmaples of testing functions of evaluating the performance of the IR-based and ML-based recommendation, and recommendation functions of generating recommendation results for a given test file. 
+The [test.py](code/test.py) file provides several detailed exmaples of testing functions of evaluating the performance of the IR-based and ML-based recommendation, and recommendation functions of generating recommendation results for the given test file. 
 
 ## Algorithm description
 For a detailed description of the algorithms of the two recommendation function, please refer to the [description.docx](description.docx) file. 

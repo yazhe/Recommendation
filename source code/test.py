@@ -3,8 +3,8 @@ import numpy as np
 from recommender.core import Recommender
 
 
-""" These is the code that I used to test the Recommender class 
-    and to generate recommend keyword for the test file
+""" These are the codes that I used to test the Recommender class 
+    and to generate keyword recommendation for the test file
 """
 
 """ These functions are for testing purpose """

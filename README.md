@@ -97,4 +97,4 @@ An example of the ML-based recommendation keywords of the test.csv cases is in [
 The [test.py](code/test.py) file provides several detailed exmaples of testing functions of evaluating the performance of the IR-based and ML-based recommendation, and recommendation functions of generating recommendation results for a given test file. 
 
 ## Algorithm description
-For a detailed description of the algorithms used in the two recommendation function, please refer to the [description.docx](description.docx) file. 
+For a detailed description of the algorithms of the two recommendation function, please refer to the [description.docx](description.docx) file. 

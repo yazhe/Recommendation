@@ -15,9 +15,9 @@ pip install jieba
 ## Getting started
 This section describs how to use the recommender package to recommend keywords to products. 
 ### Input datasets
-The recommender learn the relevence of products and query keywords from a log event data file. The log event data file must contain records of *product title*, *category*, *query*, *event (Impression/Click)*, *date*. A sample log data file can be found in [sample.csv](./data/sample.csv). 
+The recommender learn the relevence of products and query keywords from a log event data file. The log event data file must contain records of *product title*, *category*, *query*, *event (Impression/Click)*, *date*. A sample log data file can be found in [sample.csv](data/sample.csv). 
 
-Then, the recommender can provide keyword recommendation for a given product with *product title* and *category*. Some sample test cases can be found in [test.csv](./data/test.csv). 
+Then, the recommender can provide keyword recommendation for a given product with *product title* and *category*. Some sample test cases can be found in [test.csv](data/test.csv). 
 ### Load data
 You must allow the recommender to read log event data and build relevent indexes before running the recommendation functions.
 
@@ -91,7 +91,7 @@ top_k = 5
 result = rmd.recommend_ml_predict(row['product'], cat, top_k, model)
 ```
 ## Testing and run
-The [test.py] () file provides several detailed exmaples of testing functions of evaluating the performance of the IR-based and ML-based recommendation, and recommendation functions of generating recommendation results for a given test file. 
+The [test.py] (sourc code/test.py) file provides several detailed exmaples of testing functions of evaluating the performance of the IR-based and ML-based recommendation, and recommendation functions of generating recommendation results for a given test file. 
 
 ## Algorithm description
-For a detailed description of the algorithms used in the two recommendation function, please refer to the [decription.docx]() file. 
+For a detailed description of the algorithms used in the two recommendation function, please refer to the [description.docx](description.docx) file. 

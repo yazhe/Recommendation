@@ -15,9 +15,9 @@ pip install jieba
 ## Getting started
 This section describs how to use the recommender package to recommend keywords to products. 
 ### Input datasets
-The recommender learn the relevence of products and query keywords from a log event data file. The log event data file must contain records of *product title*, *category*, *query*, *event (Impression/Click)*, *date*. A sample log data file can be found in [sample.csv](data/sample.csv). 
+The recommender learn the relevence of products and query keywords from a log event data file. The log event data file must contain records of *product name*, *category*, *query*, *event (Impression/Click)*, *date*. A sample log data file can be found in [sample.csv](data/sample.csv). 
 
-Then, the recommender can provide keyword recommendation for a given product with *product title* and *category*. Some sample test cases can be found in [test.csv](data/test.csv). 
+Then, the recommender can provide keyword recommendation for a given product with *product name* and *category*. Some sample test cases can be found in [test.csv](data/test.csv). 
 ### Load data
 You must allow the recommender to read log event data and build relevent indexes before running the recommendation functions.
 
@@ -39,18 +39,18 @@ rmd.load_data_from_df(data)
 There are two keyword recommendation functions avaliable:
 ### IR-based recommendation
 The IR-based recommendation function takes 4 inputs:
-- **product title**: the title of a product that needs recommendation.
+- **product name**: the name of a product that needs recommendation.
 - **category**: the category that the product belong to.
 - **top_k**: the number of recommended keywords returned.
 - **alpha**: the value in the range (0,1). This value is used to tune the weight of the click rate in the final ranking score of the recommendation. The higher is this value, the function is more likely to recommend keywords with high click rate. 
 
 It outputs a list of *k* recommended keywords
 ```
-product_title = "【現貨】夏季Burberry 巴寶莉 純棉 logo 素T 短T 戰馬 經典 印花 加大尺碼 短袖T恤"
+product = "【現貨】夏季Burberry 巴寶莉 純棉 logo 素T 短T 戰馬 經典 印花 加大尺碼 短袖T恤"
 category = "Male Fashion"
 top_k = 5
 alpha = 0.2
-result = rmd.recommend_ir_method(product_title, category, top_k, alpha)
+result = rmd.recommend_ir_method(product, category, top_k, alpha)
 ```
 An example of the IR-based recommendation keywords of the test.csv cases is in [result_IR.csv](data/result_IR.csv).
 
@@ -79,17 +79,17 @@ model = joblib.load('filename.pkl')
 Then, you can proceed to making recommendations using the ML-based recommendation function. 
 
 The ML-based recommendation function takes 4 inputs:
-- **product title**: the title of a product that needs recommendation.
+- **product name**: the name of a product that needs recommendation.
 - **category**: the category that the product belong to.
 - **top_k**: the number of recommended keywords returned.
 - **model**: the pre-trained classifiation model of the given category of products. 
 
 It outputs a list of *k* recommended keywords
 ```
-product_title = "【現貨】夏季Burberry 巴寶莉 純棉 logo 素T 短T 戰馬 經典 印花 加大尺碼 短袖T恤"
+product = "【現貨】夏季Burberry 巴寶莉 純棉 logo 素T 短T 戰馬 經典 印花 加大尺碼 短袖T恤"
 category = "Male Fashion"
 top_k = 5
-result = rmd.recommend_ml_predict(row['product'], cat, top_k, model)
+result = rmd.recommend_ml_predict(product, category, top_k, model)
 ```
 An example of the ML-based recommendation keywords of the test.csv cases is in [result_ML.csv](data/result_ML.csv).
 

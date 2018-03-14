@@ -91,7 +91,7 @@ top_k = 5
 result = rmd.recommend_ml_predict(row['product'], cat, top_k, model)
 ```
 ## Testing and run
-The [test.py](sourc code/test.py) file provides several detailed exmaples of testing functions of evaluating the performance of the IR-based and ML-based recommendation, and recommendation functions of generating recommendation results for a given test file. 
+The [test.py](code/test.py) file provides several detailed exmaples of testing functions of evaluating the performance of the IR-based and ML-based recommendation, and recommendation functions of generating recommendation results for a given test file. 
 
 ## Algorithm description
 For a detailed description of the algorithms used in the two recommendation function, please refer to the [description.docx](description.docx) file. 
